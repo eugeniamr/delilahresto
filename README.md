@@ -4,11 +4,11 @@ DELILAH RESTO
 Este proyecto es sobre una api donde podes manejar una lista de usuarios, ordenes y productos de un restaurante. Esta conectada a una base de datos
 de MySQL donde se guarda la información.
 
-1er Paso. 
+ # 1er Paso. 
 Clona este repositorio o baja directamente el zip desde github.
 https://github.com/eugeniamr/delilahresto.git
 
-2do Paso.
+ # 2do Paso.
 Estas son las dependencias usadas
 
 "dependencies": {
@@ -24,23 +24,23 @@ Estas son las dependencias usadas
 
 con npm install o yarn install se pueden instalar.
 
-3er Paso.
+# 3er Paso.
 
 Configurar la base de datos:
 Esta api va a iniciar una base de datos llamada "delilahresto" y se puede configurar desde la carpeta dbConfg.js. 
 
-4to Paso.
+# 4to Paso.
 
 Hacer correr la api:
 Inicia el servidor de MySQL. En este caso usamos XAMMP Control Panel e iniciá apache y MySQL.
 Luego correremos node usando el comando node index.js o nodemon usando nodemon index.js.
 Esto iniciara la api en el puerto 3000, se podra visualizar en la consola el mensaje "Welcome to Delilah Resto"
 
-5to Paso.
+# 5to Paso.
 Para testear la api:
 Recomiendo usar postman.
 
-MIDDLEWARES
+# MIDDLEWARES
 
 checkToken: Cuando el user realicé el Login la api generara automaticamente un JWT User Token. Tiene que copiar ese token
 y usarlo cada vez que es requerido poniendolo en el header de la request con la key "user-token". El token tiene una duracion de una hora,
@@ -50,13 +50,13 @@ isAdmin:  Este middleware se usa para chequear si el usuario tiene permiso para 
 en el body request(en formato JSON) deberias poner "role": "admin", en caso de omitir esto el usuario no tendra permiso de administrador y no podra realizar las acciones
 requeridas.
 
-USUARIO GUARDADO.
+# USUARIO GUARDADO.
 La base de datos viene con un usuario guardado que se puede utilizar para realizar las pruebas. En el body request utilizando el endpoint de login mandar "username": "eugenia", "password":"holi", "email": "euge@gmail.com" y en caso
 de querer desempeñar acciones de admin tambien mandar "role": "admin". 
 
-ENDPOINTS 
+# ENDPOINTS 
 
-USERS
+# USERS
 
 POST - Registrar un user.
 
@@ -94,7 +94,7 @@ http://localhost:3000/api/users/:userId
 
 Middlewares necesarios: checkToken, isAdmin
 
-PRODUCTS.
+# PRODUCTS.
 
 GET - Obtener todos los productos
 
@@ -126,7 +126,7 @@ http://localhost:3000/api/products/:productId
 
 Middlewares necesarios: checkToken, isAdmin
 
-ORDERS.
+# ORDERS.
 
 GET - Obtener todas las orders.
 
